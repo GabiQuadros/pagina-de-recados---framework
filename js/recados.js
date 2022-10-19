@@ -68,6 +68,7 @@ function sair() {
 
 function salvarRecados(data) {
   localStorage.setItem(data.login, JSON.stringify(data));
+  sessionStorage.setItem(logado, JSON.stringify(data));
 }
 
 function mostrarRecado() {
@@ -108,6 +109,7 @@ function apagarRecado(id) {
   if (recadoDelet < 0) {
     return;
   }
+  confirm(`Deseja excluir o recado?`);
   data.recados.splice(recadoDelet, 1);
   localStorage.setItem(logado, JSON.stringify(data));
   sessionStorage.setItem(logado, JSON.stringify(data));
@@ -136,14 +138,4 @@ function editarRecado(id) {
 
   myModalEdit.hide();
   mostrarRecado();
-}
-
-function disparaAviao() {
-  const moverAviao = document.querySelector("#aviao");
-  moverAviao.classList.add(
-    "animate__animated",
-    "animate__backOutRight",
-    "animate__slow	2s",
-    "animate__delay-1s	1s"
-  );
 }
