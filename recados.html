@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Criar conta</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body class="bg-ceu">
+    <header>
+      <nav class="navbar bg-light">
+        <div class="container-fluid sair">
+          <a class="navbar-brand" href="#">
+            <img
+              src="./images/chat-right-text.svg"
+              alt="Logo"
+              width="30"
+              height="24"
+              class="d-inline-block align-text-top"
+            />
+            Minha página de recados
+          </a>
+
+          <div>
+            <button
+              id="create"
+              type="button"
+              class="btn btn-light"
+              data-bs-toggle="modal"
+              data-bs-target="#modalRecados"
+            >
+              Criar recado
+            </button>
+          </div>
+
+          <div class="dropdown" width="30">
+            <button
+              class="btn"
+              type="button"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i
+                ><a class="navbar-brand">
+                  <img
+                    src="./images/person-bounding-box.svg"
+                    alt="User"
+                    width="30"
+                    height="24"
+                    class="d-inline-block align-text-top"
+                  /> </a
+              ></i>
+            </button>
+            <ul
+              class="dropdown-menu logout"
+              aria-labelledby="dropdownMenuButton1"
+            >
+              <li>
+                <button class="dropdown-item p-2" value="sair" id="btnsair">
+                  Sair
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container mt-5">
+      <div class="row" style="height: 100px">
+        <div class="col">
+          <img
+            class="aviaoPapel "
+            src="./images/aviaopapel).png"
+            alt="aviaopapel"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="container opacity bg-light mt-3 rounded-top">
+      <div class="row">
+        <div class="col">
+          <table class="table" id="custom">
+            <thead>
+              <tr>
+                <th scope="col" class="col p-1">id</th>
+                <th scope="col" class="col p-1">Descrição</th>
+                <th scope="col" class="col p-1">Detalhamento</th>
+                <th scope="col" class="col p-1">Ação</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="modalRecados"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a class="navbar-brand">
+              <img
+                src="./images/chat-right-text.svg"
+                alt="Logo"
+                width="30"
+                height="24"
+                class="d-inline-block align-text-top imgMsn"
+              />
+              Adicione um recado
+            </a>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="input-recados">
+              <div class="mb-3">
+                <label for="description-input" class="form-label"
+                  >Descrição</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="description-input"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="detailing-input" class="form-label"
+                  >Detalhamento</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="detailing-input"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cancelar
+                </button>
+                <button type="submit" class="btn btn-success animar">
+                  Adicionar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Editar -->
+    <div
+      class="modal fade"
+      id="modalRecadosEdit"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a class="navbar-brand">
+              <img
+                src="./images/chat-right-text.svg"
+                alt="Logo"
+                width="30"
+                height="24"
+                class="d-inline-block align-text-top imgMsn"
+              />
+              Editar
+            </a>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="input-recados">
+              <div class="mb-3">
+                <label for="description-input-Edit" class="form-label"></label>
+                  Editar Descrição</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="description-input-Edit"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="detailing-input-Edit" class="form-label">
+                  Editar Detalhamento</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="detailing-input-Edit"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cancelar
+                </button>
+                <button id="btnEdit" type="submit" class="btn btn-success animar">
+                  Editar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/recados.js"></script>
+  </body>
+</html>

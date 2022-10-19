@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Peralta&display=swap");
+
+.body {
+  background: linear-gradient(-45deg, #ee7752, #23d5ab, #e73c7e) no-repeat;
+  background-size: 300% 300%;
+  justify-content: center;
+  animation: gradient 4s ease alternate infinite;
+}
+@keyframes gradient {
+  from {
+    background-position: 0 50%;
+  }
+  to {
+    background-position: 100 50%;
+  }
+}
+
+nav {
+  background: linear-gradient(-45deg, #ee7752, #23d5ab, #e73c7e, #23d5ab)
+    no-repeat;
+  background-size: 300% 300%;
+}
+
+.bg-ceu {
+  background-image: url(../images/céubg.png);
+}
+
+.aviaoPapel {
+  width: 200px;
+  opacity: 1;
+  animation: moverAviao 6s ease-in-out infinite;
+}
+@keyframes moverAviao {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  60% {
+    transform: translateX(40vw);
+    opacity: 0;
+  }
+  75% {
+    transform: translateX(45vw);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.imgMsn {
+  animation: float 8s ease-out infinite;
+}
+@keyframes float {
+  0% {
+  }
+  50% {
+    transform: translatey(-19px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+h1 {
+  font-family: "Dancing Script", cursive;
+  color: #242724;
+  font-size: 50px;
+}
+
+.button-login {
+  border-radius: 10px;
+  background-color: #23d5ab;
+  color: #ffffff;
+  width: 50%;
+  margin: 0 25%;
+}
+
+.button-default:hover {
+  background: #04bb41;
+}
+
+.button-login:hover {
+  background: #75ccf5;
+  color: #ffffff;
+}
+.link-default {
+  color: #2c423d;
+  cursor: pointer;
+}
+.link-default:hover {
+  color: #23d5ab;
+}
+
+#custom:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#custom tr:hover {
+  background-color: #ddd;
+}
+.sair {
+  margin-right: 20px;
+}
+.logout {
+  min-width: 5rem;
+}
+
+#btneditar {
+  border-radius: 3px;
+  border: 2px solid #06e32e;
+  background-color: #06e32e;
+  color: #ffffff;
+  cursor: pointer;
+}
+#btnapagar {
+  border-radius: 3px;
+  border: 2px solid #f60606;
+  background-color: #f60606;
+  color: #ffffff;
+  cursor: pointer;
+}
+#create {
+  background: none;
+  border-color: black;
+}
