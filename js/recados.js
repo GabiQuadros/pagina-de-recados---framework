@@ -8,12 +8,15 @@ let data = {
 
 document.getElementById("btnsair").addEventListener("click", sair);
 
+window.addEventListener("load", mostrarRecado);
+
 //ADICIONAR RECADO
 document
   .getElementById("input-recados")
   .addEventListener("submit", function (e) {
     e.preventDefault();
 
+    const data = JSON.parse(localStorage.getItem(logado));
     const description = document.getElementById("description-input").value;
     const detailing = document.getElementById("detailing-input").value;
 
